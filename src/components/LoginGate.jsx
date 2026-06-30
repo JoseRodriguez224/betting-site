@@ -18,13 +18,13 @@ export function LoginGate() {
           <span className="pm-brand__icon">◆</span>
           <div>
             <strong>{SITE.name}</strong>
-            <span>Private Access</span>
+            <span>{SITE.tagline}</span>
           </div>
         </div>
 
-        <h1>Administrator Login</h1>
+        <h1>Sign in to CupBet</h1>
         <p className="auth-gate__sub">
-          This site is private. Only the administrator may enter.
+          Secure access to World Cup 2026 prediction markets. Enter your invite password to continue.
         </p>
 
         <form onSubmit={handleSubmit}>
@@ -34,7 +34,7 @@ export function LoginGate() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter administrator password"
+            placeholder="Your access password"
             autoComplete="current-password"
             disabled={loading}
           />
@@ -42,12 +42,12 @@ export function LoginGate() {
           {error && <p className="auth-gate__error">{error}</p>}
 
           <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
-            {loading ? "Verifying…" : "Enter Site"}
+            {loading ? "Signing in…" : "Sign In"}
           </button>
         </form>
 
         <p className="auth-gate__note muted">
-          Unauthorized access is prohibited.
+          18+ · Crypto prediction markets · {SITE.hosts}
         </p>
       </div>
     </div>
